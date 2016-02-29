@@ -8,5 +8,11 @@
 <h:body>
     <h:outputText value="Hello!"/>
     <h:outputText value="${helloWorld.name}"/>
+    <h:outputText value="${helloWorld.priceProduct}"/>
+    <h:form>
+        <h:commandButton action="#{helloWorld.getData}" value="Data">
+        </h:commandButton>
+    </h:form>
+
 </h:body>
 </html>
