@@ -4,7 +4,12 @@ package com.grocerystore.impl;
 import com.grocerystore.entities.Product;
 import com.grocerystore.hib.HibernateUtil;
 import com.grocerystore.interfaces.ProductInterface;
+import org.hibernate.Query;
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Retman on 2016-02-13.
@@ -19,4 +24,13 @@ public class ProductImpl implements ProductInterface {
         session.close();
         return product;
     }
+
+    public List<Product> getProducts() {
+        Session session = HibernateUtil.buildSessionFactory();
+        session.beginTransaction();
+        List<Product> list = session.createCriteria(Product.class).list();
+        session.close();
+        return list;
+    }
+
 }

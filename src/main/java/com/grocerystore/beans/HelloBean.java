@@ -1,22 +1,25 @@
 package com.grocerystore.beans;
 
 
+import com.grocerystore.ejb.ProductService;
 import com.grocerystore.entities.Product;
-import com.grocerystore.impl.ProductImpl;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
-import java.math.BigDecimal;
+import javax.faces.bean.SessionScoped;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Retman on 2016-02-12.
  */
 @ManagedBean(name = "helloWorld", eager = true)
-@RequestScoped
+@SessionScoped
 public class HelloBean {
 
     public String name = "Piotr";
-    public String priceProduct = "";
+    private String priceProduct = "";
+    private int id;
+    List<Product> allProductsList;
 
     public String getName() {
         return name;
@@ -34,11 +37,38 @@ public class HelloBean {
         this.priceProduct = priceProduct;
     }
 
-    public void getData(){
-        ProductImpl product = new ProductImpl();
-        Product productById = product.getProductById(1);
-        productById.setPrice(new BigDecimal(20));
-        priceProduct = productById.getPrice().toString();
-
+    public int getId() {
+        return id;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public List<Product> getAllProductsList() {
+        return allProductsList;
+    }
+
+    public void setAllProductsList(List<Product> allProductsList) {
+        this.allProductsList = allProductsList;
+    }
+
+    public void loadPriceData(int id) {
+        ProductService productService = new ProductService();
+        Product product = productService.getById(id);
+        setPriceProduct(product.getPrice().toString());
+    }
+
+    public void forTest() {
+        ProductService productService = new ProductService();
+        Product product = productService.getById(id);
+        setPriceProduct(product.getPrice().toString());
+    }
+
+    public void allProducts(){
+        ProductService productService = new ProductService();
+        List<Product> allProducts = productService.getAllProducts();
+        setAllProductsList(allProducts);
+    }
+
 }

@@ -5,14 +5,32 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:loadBundle var="msg" basename="data"/>
 <h:body>
-    <h:outputText value="Hello!"/>
-    <h:outputText value="${helloWorld.name}"/>
-    <h:outputText value="${helloWorld.priceProduct}"/>
+    <h:outputText value="${msg.hello}"/>
+    <h:outputText value="${msg.info}"/>
     <h:form>
-        <h:commandButton action="#{helloWorld.getData}" value="Data">
+        <h:commandButton action="#{helloWorld.loadPriceData(1)}" value="Data"/>
+    </h:form>
+
+    <h:form>
+        <h:commandButton action="#{helloWorld.forTest()}">
+            <f:setPropertyActionListener target="#{helloWorld.id}" value="1"/>
         </h:commandButton>
     </h:form>
 
+    <h:outputText value="${helloWorld.priceProduct}"/>
+    <h1>PRODUCTS</h1>
+
+    <h:form>
+        <h:commandButton action="#{helloWorld.allProducts()}"/>
+    </h:form>
+
+    <ui:repeat value="#{helloWorld.allProductsList}" var="product">
+        <h:outputText value=" #{product.name}"/>
+        <h:outputText value=" #{product.typeProduct}"/>
+        <h:outputText value=" #{product.provider}"/>
+        <h:outputText value=" #{product.price}"/><br/>
+    </ui:repeat>
 </h:body>
 </html>

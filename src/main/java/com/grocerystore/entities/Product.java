@@ -1,9 +1,6 @@
 package com.grocerystore.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 /**
@@ -17,16 +14,18 @@ public class Product {
     @GeneratedValue
     private Integer id_product;
 
-    private String type_product;
+    @Column(name = "type_product")
+    private String typeProduct;
     private BigDecimal price;
     private String provider;
+    private String name;
 
-    public String getType_product() {
-        return type_product;
+    public String getTypeProduct() {
+        return typeProduct;
     }
 
-    public void setType_product(String type_product) {
-        this.type_product = type_product;
+    public void setTypeProduct(String typeProduct) {
+        this.typeProduct = typeProduct;
     }
 
     public BigDecimal getPrice() {
@@ -51,5 +50,13 @@ public class Product {
 
     public void setId_product(Integer id_product) {
         this.id_product = id_product;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
