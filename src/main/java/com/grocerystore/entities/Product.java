@@ -7,17 +7,18 @@ import java.math.BigDecimal;
  * Created by Retman on 2016-02-13.
  */
 @Entity
-@Table( name = "product" )
+@Table(name = "product")
 public class Product {
 
     @Id
     @GeneratedValue
-    private Integer id_product;
-
+    @Column(name = "id_product")
+    private Integer idProduct;
     @Column(name = "type_product")
     private String typeProduct;
     private BigDecimal price;
     private String provider;
+    @Column(name = "product_name")
     private String name;
 
     public String getTypeProduct() {
@@ -44,12 +45,12 @@ public class Product {
         this.provider = provider;
     }
 
-    public Integer getId_product() {
-        return id_product;
+    public Integer getIdProduct() {
+        return idProduct;
     }
 
-    public void setId_product(Integer id_product) {
-        this.id_product = id_product;
+    public void setIdProduct(Integer idProduct) {
+        this.idProduct = idProduct;
     }
 
     public String getName() {

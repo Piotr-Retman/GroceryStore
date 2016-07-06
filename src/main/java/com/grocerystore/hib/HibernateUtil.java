@@ -21,7 +21,7 @@ public class HibernateUtil {
             Properties prop = new Properties();
             prop.setProperty("hibernate.connection.url", "jdbc:mysql://localhost:3306/grocery_store");
             prop.setProperty("hibernate.connection.username", "root");
-            prop.setProperty("hibernate.connection.password", "");
+            prop.setProperty("hibernate.connection.password", "root");
             prop.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
             prop.setProperty("hibernate.connection.driver_class", "com.mysql.jdbc.Driver");
 
