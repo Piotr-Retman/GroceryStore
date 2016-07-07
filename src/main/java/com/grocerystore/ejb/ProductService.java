@@ -20,7 +20,6 @@ public class ProductService implements ProductServiceInterface {
     public Product getById(int id) {
         ProductImpl product = new ProductImpl();
         Product productById = product.getProductById(id);
-        productById.setPrice(new BigDecimal(20));
         return productById;
     }
 

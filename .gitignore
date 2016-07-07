@@ -9,6 +9,7 @@
 *.war
 *.ear
 .idea
+
 out
 target
 GroceryStore.iml
@@ -16,3 +17,5 @@ GroceryStore.iml
 hs_err_pid*
 
 # Created by .ignore support plugin (hsz.mobi)
+.img/
+.css/

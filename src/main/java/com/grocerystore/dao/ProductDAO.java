@@ -1,7 +1,9 @@
 package com.grocerystore.dao;
 
 import com.grocerystore.entities.Product;
+import com.grocerystore.hib.HibernateUtil;
 import com.grocerystore.impl.ProductImpl;
+import org.hibernate.Session;
 
 import java.math.BigDecimal;
 
