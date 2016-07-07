@@ -1,34 +1,24 @@
 package com.grocerystore;
 
 import com.grocerystore.beans.HelloBean;
-import com.grocerystore.ejb.ProductService;
-import com.grocerystore.ejb.ejbinterface.ProductServiceInterface;
 import com.grocerystore.entities.Product;
-import com.grocerystore.hib.HibernateUtil;
-import com.grocerystore.impl.ProductImpl;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.mockito.Mockito;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsNot.not;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 import static org.mockito.Matchers.isNull;
-import static org.mockito.Matchers.notNull;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 /**
  * Created by retman on 06.07.16.

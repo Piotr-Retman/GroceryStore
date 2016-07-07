@@ -1,7 +1,6 @@
-package com.grocerystore.interfaces;
+package com.grocerystore.impl.interfaces;
 
 import com.grocerystore.entities.Product;
-import org.hibernate.Session;
 
 import java.util.List;
 
