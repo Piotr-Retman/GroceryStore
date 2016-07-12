@@ -1,4 +1,4 @@
-package com.grocerystore.impl.interfaces;
+package com.grocerystore.impl.interfaces.products;
 
 import com.grocerystore.entities.Product;
 

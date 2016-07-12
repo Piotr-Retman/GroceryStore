@@ -51,19 +51,18 @@ public class HelloBeanTest {
         HelloBean hb = new HelloBean();
         hb.allProducts();
         List<Product> allProductsList = hb.getAllProductsList();
-        assertThat("All product list is not empty",allProductsList.size()!=0,is(true));
+        assertThat("All product list is not empty", allProductsList.size() != 0, is(true));
 
     }
 
     @Test
-    public void testMethodForTest(){
+    public void testMethodForTest() {
         HelloBean hb = new HelloBean();
         hb.setId(1);
         hb.forTest();
         hb.loadPriceData(1);
         String priceProduct = hb.getPriceProduct();
-        assertThat("Price for product is not empty",priceProduct,is(not(isNull())));
+        assertThat("Price for product is not empty", priceProduct, is(not(isNull())));
     }
-
 
 }

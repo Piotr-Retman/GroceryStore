@@ -2,12 +2,9 @@ package com.grocerystore.ejb;
 
 import com.grocerystore.ejb.ejbinterface.ProductServiceInterface;
 import com.grocerystore.entities.Product;
-import com.grocerystore.hib.HibernateUtil;
-import com.grocerystore.impl.ProductImpl;
-import org.hibernate.Session;
+import com.grocerystore.impl.prodimpl.ProductImpl;
 
 import javax.ejb.Stateless;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 

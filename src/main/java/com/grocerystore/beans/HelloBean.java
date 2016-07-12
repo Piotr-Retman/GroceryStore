@@ -21,14 +21,6 @@ public class HelloBean {
     private int id;
     List<Product> allProductsList;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getPriceProduct() {
         return priceProduct;
     }
