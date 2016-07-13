@@ -1,5 +1,5 @@
 import com.grocerystore.HelloBeanTest;
-import com.grocerystore.LogInUserInterfaceTest;
+import com.grocerystore.LogInUsersInterfaceTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
@@ -9,7 +9,7 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
         HelloBeanTest.class,
-        LogInUserInterfaceTest.class
+        LogInUsersInterfaceTest.class
 })
 public class JUnitTestSuite {
 

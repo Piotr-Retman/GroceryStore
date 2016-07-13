@@ -1,11 +1,13 @@
 package com.grocerystore.hib;
 
 import com.grocerystore.entities.Product;
+import com.grocerystore.entities.Users;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
+
 import java.util.Properties;
 
 /**
@@ -28,6 +30,7 @@ public class HibernateUtil {
             configuration.setProperties(prop);
             configuration.addPackage("com.grocerystore.entities");
             configuration.addAnnotatedClass(Product.class);
+            configuration.addAnnotatedClass(Users.class);
             ServiceRegistry serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).buildServiceRegistry();
             SessionFactory sessionFactory = configuration.buildSessionFactory(serviceRegistry);
 

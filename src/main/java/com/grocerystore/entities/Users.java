@@ -5,14 +5,19 @@ import javax.persistence.*;
 /**
  * Created by retman on 11.07.16.
  */
+@NamedNativeQueries({
+        @NamedNativeQuery(
+                name = "find",
+                query = "select users.user_id,users.username,users.user_type,users.first_name,users.surname from users where users.username = :username and users.passwd = :password"
+        )
+})
 @Entity
 @Table(name = "users")
-public class User {
+public class Users {
     @Id
     @GeneratedValue
     @Column(name="user_id")
     private int userId;
-
     @Column(name="user_type")
     private String userType;
 
@@ -20,12 +25,14 @@ public class User {
     private String userName;
 
     @Transient
+    @Column(name="passwd")
     private String passwd;
 
     @Column(name="first_name")
     private String firstName;
 
     private String surname;
+
 
     public int getUserId() {
         return userId;
@@ -47,6 +54,7 @@ public class User {
         return userName;
     }
 
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -65,5 +73,13 @@ public class User {
 
     public void setSurname(String surname) {
         this.surname = surname;
+    }
+
+    public String getPasswd() {
+        return passwd;
+    }
+
+    public void setPasswd(String passwd) {
+        this.passwd = passwd;
     }
 }

@@ -8,32 +8,14 @@
 <h:head>
     <h:outputStylesheet library="css" name="main.css"></h:outputStylesheet>
 </h:head>
-<f:loadBundle var="msg" basename="data"/>
 <h:body>
-    <h:outputText value="${msg.hello}"/>
-    <h:outputText value="${msg.info}"/>
+
+
+    <!--Form to log in -->
     <h:form>
-        <h:commandButton styleClass="Btn" action="#{helloWorld.loadPriceData(1)}" value="Data"/>
+        <h:inputText value="#{loginLogoutBean.username}"/>
+        <h:inputSecret value="#{loginLogoutBean.password}"/>
+        <h:commandButton styleClass="Btn" action="#{loginLogoutBean.login}" value="LOGIN"/>
     </h:form>
-
-    <h:form>
-        <h:commandButton action="#{helloWorld.forTest()}">
-            <f:setPropertyActionListener target="#{helloWorld.id}" value="1"/>
-        </h:commandButton>
-    </h:form>
-
-    <h:outputText value="${helloWorld.priceProduct}"/>
-    <h1>PRODUCTS</h1>
-
-    <h:form>
-        <h:commandButton action="#{helloWorld.allProducts()}"/>
-    </h:form>
-
-    <ui:repeat value="#{helloWorld.allProductsList}" var="product">
-        <h:outputText value=" #{product.name}"/>
-        <h:outputText value=" #{product.typeProduct}"/>
-        <h:outputText value=" #{product.provider}"/>
-        <h:outputText value=" #{product.price}"/><br/>
-    </ui:repeat>
 </h:body>
 </html>
